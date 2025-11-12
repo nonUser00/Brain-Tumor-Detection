@@ -43,8 +43,8 @@ Empat model CNN pra-latih dari **ImageNet** digunakan untuk mengekstraksi *deep 
 ### 🔗 Feature Concatenation
 Fitur dari beberapa CNN digabung untuk memperkaya representasi:
 1. VGG16 + InceptionV3 → **2,560 fitur**  
-2. + ResNet101 → **4,608 fitur**  
-3. + DenseNet201 → **6,528 fitur**
+2. ResNet101 → **4,608 fitur**  
+3. DenseNet201 → **6,528 fitur**
 
 ---
 
@@ -102,10 +102,7 @@ dengan input berupa fitur hasil seleksi GA.
 * Google Colab
 * Kaggle API (untuk download dataset)
 
-### Instalasi
-
-bash
-# Clone repository
+### Clone repository
 git clone https://github.com/nonUser00/Brain-Tumor-Detection.git
 cd brain-tumor-detection
 
@@ -118,7 +115,6 @@ KAGGLE_KEY=your_kaggle_api_key
 
 
 ## 📚 Referensi
-
 > Wageh, M., Amin, K., Algarni, A. D., Hamad, A. M., & Ibrahim, M. (2024).
 > *Brain Tumor Detection Based on Deep Features Concatenation and Machine Learning Classifiers With Genetic Selection.*
 > **IEEE Access, Vol. 12**, 114923–114939.
@@ -127,9 +123,9 @@ KAGGLE_KEY=your_kaggle_api_key
 ---
 
 ## 👤 Author
-
-**Yuka Wardana**
-Universitas Dian Nuswantoro (UDINUS), Semarang
-📧 [p31202502659@mhs.dinus.ac.id](mailto:p31202502659@mhs.dinus.ac.id)
+**Yuka Wardana**  
+Universitas Dian Nuswantoro (UDINUS), Semarang  
+📧 [p31202502659@mhs.dinus.ac.id](mailto:p31202502659@mhs.dinus.ac.id)  
 💻 [GitHub](https://github.com/nonUser00)
+
 

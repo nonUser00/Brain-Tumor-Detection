@@ -89,7 +89,6 @@ dengan input berupa fitur hasil seleksi GA.
 | XGBoost           | 99.10      | 99.09     | 99.10  | 99.10    |
 
 📌 **Model terbaik:**
-
 * Dataset I → SVM / Decision Tree (99.74%)
 * Dataset II → Decision Tree (99.87%)
 
@@ -98,18 +97,15 @@ dengan input berupa fitur hasil seleksi GA.
 ## 🚀 Quick Start
 
 ### Prerequisites
-
 * Google Colab
 * Kaggle API (untuk download dataset)
 
 ### Clone repository
-git clone https://github.com/nonUser00/Brain-Tumor-Detection.git
-cd brain-tumor-detection
+`git clone https://github.com/nonUser00/Brain-Tumor-Detection.git`
+`cd brain-tumor-detection`
 
 ### Setup Kaggle API
-
 Buat file `.env` di root folder dan isi dengan:
-
 KAGGLE_USERNAME=your_kaggle_username
 KAGGLE_KEY=your_kaggle_api_key
 
@@ -123,9 +119,8 @@ KAGGLE_KEY=your_kaggle_api_key
 ---
 
 ## 👤 Author
-**Yuka Wardana**  
-Universitas Dian Nuswantoro (UDINUS), Semarang  
-📧 [p31202502659@mhs.dinus.ac.id](mailto:p31202502659@mhs.dinus.ac.id)  
+**Yuka Wardana**
+📧 [yukawardana587@gmail.com](mailto:yukawardana587@gmail.com)  
 💻 [GitHub](https://github.com/nonUser00)
 
 

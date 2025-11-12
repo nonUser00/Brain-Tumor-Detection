@@ -6,8 +6,10 @@
 [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yourusername/brain-tumor-detection)
 
 > Replikasi dan implementasi paper IEEE Access:  
-> **"Brain Tumor Detection Based on Deep Features Concatenation and Machine Learning Classifiers With Genetic Selection"**  
-> oleh **Mohamed Wageh et al. (2024), IEEE Access Vol. 12, DOI: 10.1109/ACCESS.2024.3446190**
+> **Judul Paper:** Brain Tumor Detection Based on Deep Features Concatenation and Machine Learning Classifiers With Genetic Selection
+> **Penulis:** Mohamed Wageh, Khalid Amin, Abeer D. Algarni, Ahmed M. Hamad, dan Mina Ibrahim
+> **Publikasi:** IEEE Access, Vol. 12, 2024
+> **DOI:** [10.1109/ACCESS.2024.3446190](https://ieeexplore.ieee.org/document/10639386)
 
 ---
 
@@ -20,53 +22,44 @@ Pendekatan ini menggabungkan **deep features dari beberapa CNN (VGG-16, Inceptio
 Meningkatkan akurasi deteksi tumor otak menggunakan kombinasi fitur mendalam (deep features) dari berbagai arsitektur CNN serta optimasi seleksi fitur berbasis algoritma genetika.
 
 ## ⚙️ Metodologi
-
-### 🧪 1. Preprocessing
-
-* **Cropping:** Menghapus area tidak relevan.
-* **Resizing:**
-
-  * 224×224 px → VGG16, ResNet101, DenseNet201
-  * 299×299 px → InceptionV3
-* **Augmentation:** Flipping, rotation (−20°–20°), shifting (±20 px).
-* **Filtering:** Median filter untuk reduksi noise.
-
-### 🧬 2. Feature Extraction (Transfer Learning)
-
-Empat model CNN pra-latih digunakan sebagai *feature extractor*:
-
-| Model        | Input Size | Output Features | Pre-trained Weight |
-| ------------ | ---------- | --------------- | ------------------ |
-| VGG-16       | 224×224×3  | 512             | ImageNet           |
-| Inception V3 | 299×299×3  | 2048            | ImageNet           |
-| ResNet-101   | 224×224×3  | 2048            | ImageNet           |
-| DenseNet-201 | 224×224×3  | 1920            | ImageNet           |
-
-### 🔗 3. Feature Concatenation
-
-Tiga level penggabungan fitur diuji:
-
-1. **VGG-16 + InceptionV3 → 2,560 fitur**
-2. **VGG-16 + InceptionV3 + ResNet101 → 4,608 fitur**
-3. **VGG-16 + InceptionV3 + ResNet101 + DenseNet201 → 6,528 fitur**
-
-### 🧠 4. Feature Selection
-
-Menggunakan **Genetic Algorithm (GA)** untuk memilih ±500 fitur terbaik berdasarkan *fitness score* tertinggi.
-Tujuannya meningkatkan efisiensi komputasi dan akurasi klasifikasi.
-
-### 🤖 5. Machine Learning Classifiers
-
-Empat model digunakan untuk klasifikasi akhir:
-
-* Support Vector Machine (**SVM**)
-* Random Forest (**RF**)
-* Decision Tree (**DT**)
-* Extreme Gradient Boosting (**XGB**)
+### 🧪 Preprocessing
+Citra MRI diproses melalui **cropping** untuk menghapus area tidak relevan, **resizing** (224×224 untuk VGG/ResNet/DenseNet, 299×299 untuk InceptionV3), serta **augmentasi** berupa rotasi, flipping, dan shifting guna memperbanyak variasi data.  
+Noise dihilangkan menggunakan **median filter** agar citra lebih bersih.
 
 ---
 
-## 📊 Dataset
+### 🧬 Feature Extraction (Transfer Learning)
+Empat model CNN pra-latih dari **ImageNet** digunakan untuk mengekstraksi *deep features* dari citra MRI:
+
+| Model | Input | Output Features |
+|--------|--------|----------------|
+| VGG-16 | 224×224×3 | 512 |
+| Inception V3 | 299×299×3 | 2048 |
+| ResNet-101 | 224×224×3 | 2048 |
+| DenseNet-201 | 224×224×3 | 1920 |
+
+---
+
+### 🔗 Feature Concatenation
+Fitur dari beberapa CNN digabung untuk memperkaya representasi:
+1. VGG16 + InceptionV3 → **2,560 fitur**  
+2. + ResNet101 → **4,608 fitur**  
+3. + DenseNet201 → **6,528 fitur**
+
+---
+
+### 🧠 Feature Selection
+**Genetic Algorithm (GA)** digunakan untuk menyeleksi ±500 fitur paling informatif dari hasil concatenation, meningkatkan efisiensi dan akurasi klasifikasi.
+
+---
+
+### 🤖 Machine Learning Classifiers
+Empat algoritma diuji untuk klasifikasi akhir:
+**SVM**, **Random Forest**, **Decision Tree**, dan **XGBoost**,  
+dengan input berupa fitur hasil seleksi GA.
+
+
+## 📊 Dataset yang digunakan
 
 | Dataset        | Total Gambar | Tumor | Non-Tumor | Sumber                                                                                                                            |
 | -------------- | ------------ | ----- | --------- | --------------------------------------------------------------------------------------------------------------------------------- |
@@ -75,7 +68,7 @@ Empat model digunakan untuk klasifikasi akhir:
 
 ---
 
-## 📈 Hasil Eksperimen
+## 📈 Hasil dari Paper
 
 ### Dataset I – Brain MRI Images (Navoneel)
 
@@ -123,40 +116,6 @@ Buat file `.env` di root folder dan isi dengan:
 KAGGLE_USERNAME=your_kaggle_username
 KAGGLE_KEY=your_kaggle_api_key
 
----
-
-## 📁 Struktur Proyek
-
-brain-tumor-detection/
-├── data/                  
-├── models/ 
-├── notebooks/
-│   ├── feature_extraction.ipynb
-│   ├── concatenation_genetic.ipynb
-│   └── classification.ipynb
-├── results/
-│   ├── confusion_matrices/
-│   └── metrics_summary.csv
-├── utils/
-│   ├── preprocessing.py
-│   ├── genetic_selection.py
-│   └── visualization.py
-├── requirements.txt
-└── README.md
-
----
-
-## 🧪 Visualisasi Hasil
-
-| Tahapan                | Visualisasi                                              |
-| ---------------------- | -------------------------------------------------------- |
-| **Preprocessing**      | ![Preprocessing Sample](assets/sample_preprocessing.png) |
-| **Feature Extraction** | ![Feature Map](assets/feature_map.png)                   |
-| **Confusion Matrix**   | ![Confusion Matrix](assets/confusion_matrix.png)         |
-
-> *Note: Contoh gambar dapat diganti sesuai hasil eksperimenmu di folder `results/`.*
-
----
 
 ## 📚 Referensi
 
@@ -174,8 +133,3 @@ Universitas Dian Nuswantoro (UDINUS), Semarang
 📧 [p31202502659@mhs.dinus.ac.id](mailto:p31202502659@mhs.dinus.ac.id)
 💻 [GitHub](https://github.com/nonUser00)
 
----
-
-## 🧾 License
-
-This project is licensed under the [MIT License](LICENSE).

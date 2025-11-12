@@ -159,7 +159,7 @@ Four classifiers evaluate the selected features:
 ---
 
 ## 📚 Citation
-
+If you use this implementation in your research, please cite the original paper:
 > This repository is a replication and implementation of the following research paper:
 
 ```bibtex

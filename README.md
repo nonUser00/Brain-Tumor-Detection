@@ -1,9 +1,3 @@
-Siap ✅ Berikut ini adalah versi akhir **`README.md`** dalam format Markdown yang **siap langsung kamu upload ke GitHub**.
-Versi ini sudah profesional, lengkap, dan disusun agar tampil rapi di tampilan GitHub — termasuk badge, tabel hasil, diagram pipeline, dan metadata penulis.
-
----
-
-````markdown
 # 🧠 Brain Tumor Detection Using Deep Features Concatenation
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/downloads/)
@@ -117,7 +111,7 @@ Empat model digunakan untuk klasifikasi akhir:
 
 ### Instalasi
 
-```bash
+bash
 # Clone repository
 git clone https://github.com/nonUser00/Brain-Tumor-Detection.git
 cd brain-tumor-detection
@@ -126,16 +120,13 @@ cd brain-tumor-detection
 
 Buat file `.env` di root folder dan isi dengan:
 
-```
 KAGGLE_USERNAME=your_kaggle_username
 KAGGLE_KEY=your_kaggle_api_key
-```
 
 ---
 
 ## 📁 Struktur Proyek
 
-```
 brain-tumor-detection/
 ├── data/                  
 ├── models/ 
@@ -152,7 +143,6 @@ brain-tumor-detection/
 │   └── visualization.py
 ├── requirements.txt
 └── README.md
-```
 
 ---
 

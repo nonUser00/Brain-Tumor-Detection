@@ -146,21 +146,6 @@ Four classifiers evaluate the selected features:
 
 ---
 
-## 📁 Project Structure
-
-```
-Brain-Tumor-Detection/
-├── notebooks/          # Jupyter/Colab notebooks
-├── data/              # Dataset directory
-├── models/            # Saved models
-├── utils/             # Helper functions
-├── results/           # Experiment results
-├── .env              # Kaggle API credentials
-├── requirements.txt  # Python dependencies
-└── README.md         # Project documentation
-```
-
----
 
 ## 🔑 Key Features
 
@@ -175,7 +160,7 @@ Brain-Tumor-Detection/
 
 ## 📚 Citation
 
-If you use this implementation in your research, please cite the original paper:
+> This repository is a replication and implementation of the following research paper:
 
 ```bibtex
 @article{wageh2024brain,
